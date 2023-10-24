@@ -4,9 +4,6 @@ using namespace std;
 
 
 bool sortedOrNot(vector<int>&vec,int n){
-    bool flag=true;
-    // multimap<int,int>mp;
-    // for(int i=0;i<n;i++) mp.insert({vec[i],i});
     if(is_sorted(vec.begin(),vec.end())) return true;
 
     vector<int>even;
@@ -38,12 +35,11 @@ bool sortedOrNot(vector<int>&vec,int n){
 
     for(int i=0;i<n-1;i++){
         if(vec[i]>vec[i+1]) {
-            flag=false;
-            break;
+           return false;
         }
     }
 
-    return flag;
+    return true;
 }
 
 int main() {
